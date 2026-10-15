@@ -126,40 +126,30 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   flex: 0 1 auto;
   min-width: 0;
+  text-decoration: none;
 }
 
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  background: var(--primary);
-  color: #fff;
+.brand-title {
   font-family: "Sora", sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.05rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
-  box-shadow: var(--shadow-soft);
+  color: var(--primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: lowercase;
 }
 
-.brand-text {
+.brand--footer {
   display: inline-flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.brand-text strong,
-.footer-brand strong {
-  font-family: "Sora", sans-serif;
-  font-size: 1rem;
-}
-
-.brand-text small {
-  color: var(--text-soft);
-  font-size: 0.77rem;
+.brand--footer .brand-title {
+  font-size: clamp(1.5rem, 3.5vw, 1.85rem);
+  color: #fff;
 }
 
 .site-menu {
@@ -1914,13 +1904,14 @@ button {
 
 .segments-section .segment-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: var(--grid-gap-sm);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--grid-gap);
 }
 
 .segment-card-head {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
   gap: 10px;
 }
 
@@ -1938,13 +1929,18 @@ button {
 .segments-section .segment-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   min-height: 152px;
   padding: 16px;
+  overflow: hidden;
 }
 
 .segments-section .segment-card h3 {
   margin: 0;
+  min-width: 0;
   font-size: 0.92rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .segments-section .segment-card p {
@@ -2711,6 +2707,10 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .segments-section .segment-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  }
+
   .highlight-panel,
   .profile-panel {
     position: static;
@@ -2793,6 +2793,23 @@ button {
 }
 
 @media (max-width: 640px) {
+  .top-ribbon {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .top-ribbon::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-ribbon p {
+    white-space: nowrap;
+    font-size: clamp(0.56rem, 2.65vw, 0.68rem);
+    letter-spacing: 0.04em;
+    padding: 10px 14px;
+  }
+
   .section {
     padding: var(--section-y-sm) 0;
   }

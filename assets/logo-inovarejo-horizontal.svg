@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 56" role="img" aria-label="Inovarejo Integracoes e Marketing">
+  <image
+    xlink:href="images/logo-inovarejo-marca.jpg"
+    x="0"
+    y="0"
+    width="56"
+    height="56"
+    preserveAspectRatio="xMidYMin slice"
+  />
+  <text x="64" y="34" fill="#000cc9" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">inovarejo</text>
+  <text x="64" y="48" fill="#da762e" font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2">INTEGRACOES &amp; MARKETING</text>
+</svg>
