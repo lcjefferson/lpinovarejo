@@ -220,6 +220,11 @@ const setActiveNav = (activeId) => {
 };
 
 const pickActiveSection = () => {
+  if (window.scrollY < 120) {
+    setActiveNav("inicio");
+    return;
+  }
+
   let activeId = sectionIds[0];
   let maxRatio = 0;
 
@@ -256,6 +261,17 @@ sectionIds.forEach((id) => {
     sectionObserver.observe(section);
   }
 });
+
+document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.replaceState(null, "", "#inicio");
+    setActiveNav("inicio");
+  });
+});
+
+window.addEventListener("scroll", pickActiveSection, { passive: true });
 
 const leadForm = document.getElementById("lead-form");
 const formFeedback = document.getElementById("form-feedback");
